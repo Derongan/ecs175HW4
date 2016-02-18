@@ -11,5 +11,6 @@ public:
 	PointElement(int x, int y);
 	~PointElement();
 	void draw(graphics *g);
+	void drawControlPoints(graphics *g);
 };
 

@@ -11,5 +11,6 @@ public:
 	~LineElement();
 
 	virtual void draw(graphics *g);
+	virtual void drawControlPoints(graphics *g);
 };
 
