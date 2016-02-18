@@ -22,3 +22,7 @@ void Element::setColor(float r, float g, float b)
 void Element::addPoint(int x, int y)
 {
 }
+
+void Element::drawControlPoints(graphics *g)
+{
+}

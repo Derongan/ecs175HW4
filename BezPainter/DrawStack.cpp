@@ -18,6 +18,7 @@ void DrawStack::draw(graphics *g)
 {
 	for (int i = 0; i < stackLocation; i++) {
 		_stack[i]->draw(g);
+		_stack[i]->drawControlPoints(g);
 	}
 }
 

@@ -34,3 +34,11 @@ void BezierElement::addPoint(int x, int y)
 	points[num * 2 + 1] = y;
 	num++;
 }
+
+void BezierElement::drawControlPoints(graphics *g)
+{
+	for (int i = 0; i < num; i++) {
+		g->setColor(0, 1, 0);
+		g->setPixel(points[i * 2], points[i * 2 + 1]);
+	}
+}

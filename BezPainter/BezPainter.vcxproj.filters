@@ -57,9 +57,6 @@
     <ClCompile Include="PointerTool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EditTool.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractTool.h">
@@ -99,9 +96,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PointerTool.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EditTool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
