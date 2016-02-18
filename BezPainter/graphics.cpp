@@ -18,6 +18,8 @@ graphics::~graphics()
 
 void graphics::setPixel(int x, int y)
 {
+	if (x > width || x < 0 || y > height || y < 0)
+		return;
 	this->buffer[x * 3 + y * this->width * 3] = color[0];
 	this->buffer[x * 3 + y * this->width * 3 + 1] = color[1];
 	this->buffer[x * 3 + y * this->width * 3 + 2] = color[2];
