@@ -12,6 +12,13 @@ Element::~Element()
 {
 }
 
+void Element::draw(graphics * g, bool w)
+{
+	draw(g);
+	if (w)
+		drawControlPoints(g);
+}
+
 void Element::setColor(float r, float g, float b)
 {
 	color[0] = r;
