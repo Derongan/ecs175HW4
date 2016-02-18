@@ -6,9 +6,11 @@
 #include "DrawStack.h"
 #include "PointElement.h"
 #include "LineElement.h"
+#include "Painter.h"
 
 void display();
 void click(int,int,int,int);
+void move(int, int);
 void createMenu();
 void callbackMenu(int id);
 
@@ -21,21 +23,20 @@ graphics *g;
 DrawStack *s;
 DrawStack *ts;
 
+Painter *p;
+
 float last[2] = {0};
 bool l = false;
 
 int main(int argc, char *argv[])
 {
 	//allocate new pixel buffer, need initialization!!
-	//Setup our cursor
-	c = new Cursor();
-	c->useBezierTool();
-
-	//Setup drawing stack
-	s = new DrawStack();
-	ts = new DrawStack();
 
 	g = new graphics(WIDTH, HEIGHT);
+
+	p = new Painter(g);
+
+	c = p->getCursor();
 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE);
@@ -50,10 +51,16 @@ int main(int argc, char *argv[])
 							  //sets display function
 	glutDisplayFunc(display);
 	glutMouseFunc(click);
+	glutPassiveMotionFunc(move);
 	createMenu();
 
 	glutMainLoop();//main display loop, will display until terminate
 	return 0;
+}
+
+void move(int x, int y) {
+	p->onMove(x, HEIGHT - y);
+	glutPostRedisplay();
 }
 
 void createMenu() {
@@ -73,31 +80,18 @@ void callbackMenu(int id) {
 	switch (id) {
 	case 1:
 		c->setColor(1, 0, 0);
-		s->push(c->finish());
 		c->reset();
-		ts->reset();
-		l = false;
 		break;
 	case 3:
 		c->reset();
 		c->useLineTool();
-		ts->reset();
 		break;
 	case 4:
 		c->reset();
 		c->useBezierTool();
-		ts->reset();
 		break;
 	case 5:
-		c->setColor(1, 0, 0);
-
-		Element *e = c->finish();
-
-		s->push(e);
 		c->reset();
-		ts->reset();
-		l = false;
-
 		break;
 	}
 	glutPostRedisplay();
@@ -106,19 +100,7 @@ void callbackMenu(int id) {
 void click(int button, int state, int x, int y) {
 	y = HEIGHT - y;
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-		c->addPoint(x, y);
-		Element* e = new PointElement(x, y);
-		e->setColor(0, 1, 0);
-		if (l) {
-			Element* e = new LineElement(x, y, last[0], last[1]);
-			e->setColor(.8, 0, .8);
-			ts->push(e);
-		}
-		ts->push(e);
-		last[0] = x;
-		last[1] = y;
-		l = true;
-		printf("Starting drawing drawing\n");
+		p->onClick(button, state, x, y);
 	}
 }
 
@@ -129,13 +111,8 @@ void display()
 	glClear(GL_COLOR_BUFFER_BIT);
 	glLoadIdentity();
 	g->clearBuffer();
-	g->setColor(1, 0, 0);
 
-	s->draw(g);
-	ts->draw(g);
-
-	g->setColor(0, 1, 0);
-
+	p->draw();
 	//draws pixel on screen, width and height must match pixel buffer dimension
 	glDrawPixels(WIDTH, HEIGHT, GL_RGB, GL_FLOAT, g->getCurrentBuffer());
 

@@ -15,7 +15,7 @@ bool BezierTool::addPoint(float x, float y)
 	this->points[this->pointNumber*2] = x;
 	this->points[this->pointNumber*2 + 1] = y;
 	this->pointNumber++;
-	if (pointNumber > MAXPOINTS)
+	if (this->pointNumber >= MAXPOINTS)
 		return false;
 	return true;
 }
@@ -31,4 +31,14 @@ Element* BezierTool::finish()
 void BezierTool::reset()
 {
 	this->pointNumber = 0;
+}
+
+Element * BezierTool::preview(int x, int y)
+{
+	BezierElement *e = new BezierElement();
+	e->setPoints(points, pointNumber);
+	e->addPoint(x, y);
+	e->setColor(color[0], color[1], color[2]);
+
+	return e;
 }

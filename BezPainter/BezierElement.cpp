@@ -24,3 +24,13 @@ void BezierElement::setPoints(float * points, int num)
 	}
 	this->num = num;
 }
+
+void BezierElement::addPoint(int x, int y)
+{
+	if (num >= 20)
+		return;
+
+	points[num * 2] = x;
+	points[num * 2 + 1] = y;
+	num++;
+}

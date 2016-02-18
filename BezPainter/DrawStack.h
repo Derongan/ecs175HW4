@@ -15,5 +15,6 @@ public:
 	~DrawStack();
 	void draw(graphics *g);
 	bool push(Element *e);
+	bool pop();
 	void reset();
 };

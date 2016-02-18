@@ -27,6 +27,16 @@ bool DrawStack::push(Element *e)
 	return true;
 }
 
+bool DrawStack::pop()
+{
+	if (stackLocation <= 0)
+		return false;
+	else {
+		stackLocation--;
+		return true;
+	}
+}
+
 void DrawStack::reset()
 {
 	stackLocation = 0;

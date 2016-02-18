@@ -1,6 +1,7 @@
 #include "AbstractTool.h"
 #include "BezierTool.h"
 #include "LineTool.h"
+#include "PointerTool.h"
 #include "graphics.h"
 #pragma once
 class Cursor
@@ -14,8 +15,11 @@ public:
 	void reset();
 	void useBezierTool();
 	void useLineTool();
-	void setTarget(graphics *g);
+	void usePointerTool();
 	void setColor(int r, int g, int b);
+
+	Element* preview(int x, int y);
+
 	Cursor();
 	~Cursor();
 };

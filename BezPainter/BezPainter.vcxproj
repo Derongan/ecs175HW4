@@ -140,6 +140,7 @@
     <ClCompile Include="BezierTool.cpp" />
     <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="DrawStack.cpp" />
+    <ClCompile Include="EditTool.cpp" />
     <ClCompile Include="Element.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="LineElement.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="list.cpp" />
     <ClCompile Include="Painter.cpp" />
     <ClCompile Include="PointElement.cpp" />
+    <ClCompile Include="PointerTool.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +157,7 @@
     <ClInclude Include="BezierTool.h" />
     <ClInclude Include="Cursor.h" />
     <ClInclude Include="DrawStack.h" />
+    <ClInclude Include="EditTool.h" />
     <ClInclude Include="Element.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="LineElement.h" />
@@ -162,6 +165,7 @@
     <ClInclude Include="list.h" />
     <ClInclude Include="Painter.h" />
     <ClInclude Include="PointElement.h" />
+    <ClInclude Include="PointerTool.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

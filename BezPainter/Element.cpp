@@ -18,3 +18,7 @@ void Element::setColor(float r, float g, float b)
 	color[1] = g;
 	color[2] = b;
 }
+
+void Element::addPoint(int x, int y)
+{
+}

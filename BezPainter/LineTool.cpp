@@ -20,13 +20,21 @@ bool LineTool::addPoint(float x, float y)
 	return true;
 }
 
-//NOT IMPLEMENTED
 Element* LineTool::finish()
 {
-	return nullptr;
+	return new LineElement(points[0], points[1], points[2], points[3]);
 }
 
 void LineTool::reset()
 {
 	this->pointNumber = 0;
+}
+
+Element * LineTool::preview(int x, int y)
+{
+	if (pointNumber == 1) {
+		return new LineElement(points[0], points[1], x, y);
+	}
+	else
+		return new PointElement(x, y);
 }

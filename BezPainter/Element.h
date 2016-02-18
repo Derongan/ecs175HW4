@@ -9,5 +9,6 @@ public:
 	virtual ~Element();
 	virtual void draw(graphics *g) = 0;
 	virtual void setColor(float r, float g, float b);
+	virtual void addPoint(int x, int y);
 };
 

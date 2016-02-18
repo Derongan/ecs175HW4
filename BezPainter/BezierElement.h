@@ -8,7 +8,8 @@ class BezierElement :
 public:
 	BezierElement();
 	~BezierElement();
-	void draw(graphics *g);
+	virtual void draw(graphics *g);
 	void setPoints(float* points, int num);
+	virtual void addPoint(int x, int y);
 };
 

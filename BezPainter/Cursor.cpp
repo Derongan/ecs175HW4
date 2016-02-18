@@ -29,14 +29,20 @@ void Cursor::useLineTool()
 	this->current_tool = new LineTool();
 }
 
-void Cursor::setTarget(graphics *g)
+void Cursor::usePointerTool()
 {
-	this->target = g;
+	delete current_tool;
+	this->current_tool = new PointerTool();
 }
 
 void Cursor::setColor(int r, int g, int b)
 {
 	current_tool->setColor(r, g, b);
+}
+
+Element * Cursor::preview(int x, int y)
+{
+	return current_tool->preview(x,y);
 }
 
 Cursor::Cursor()

@@ -18,3 +18,8 @@ void AbstractTool::setColor(float r, float g, float b)
 	color[1] = g;
 	color[2] = b;
 }
+
+Element * AbstractTool::preview(int x, int y)
+{
+	return nullptr;
+}

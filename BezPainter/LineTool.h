@@ -1,5 +1,7 @@
 #pragma once
 #include "AbstractTool.h"
+#include "LineElement.h"
+#include "PointElement.h"
 class LineTool :
 	public AbstractTool
 {
@@ -14,5 +16,6 @@ public:
 	virtual bool addPoint(float x, float y);
 	virtual Element* finish();
 	virtual void reset();
+	virtual Element* preview(int x, int y);
 };
 
