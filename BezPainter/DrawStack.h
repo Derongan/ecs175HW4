@@ -7,13 +7,13 @@ class DrawStack
 {
 private:
 	Element** _stack;
-	Element** _tempStack;
 	unsigned int stackSize;
 	unsigned int stackLocation;
 public:
 	DrawStack();
 	~DrawStack();
 	void draw(graphics *g);
+	void draw(graphics *g, bool w);
 	bool push(Element *e);
 	bool pop();
 	void reset();
