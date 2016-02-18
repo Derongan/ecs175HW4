@@ -145,6 +145,7 @@
     <ClCompile Include="LineElement.cpp" />
     <ClCompile Include="LineTool.cpp" />
     <ClCompile Include="list.cpp" />
+    <ClCompile Include="Painter.cpp" />
     <ClCompile Include="PointElement.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
@@ -159,6 +160,7 @@
     <ClInclude Include="LineElement.h" />
     <ClInclude Include="LineTool.h" />
     <ClInclude Include="list.h" />
+    <ClInclude Include="Painter.h" />
     <ClInclude Include="PointElement.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -11,7 +11,7 @@ public:
 	LineTool();
 	~LineTool();
 
-	virtual void addPoint(float x, float y);
+	virtual bool addPoint(float x, float y);
 	virtual Element* finish();
 	virtual void reset();
 };

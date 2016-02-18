@@ -35,17 +35,6 @@ int main(int argc, char *argv[])
 	s = new DrawStack();
 	ts = new DrawStack();
 
-	float pts[6] = {
-		10,10,
-		50,40,
-		405,10
-	};
-
-	BezierElement* e = new BezierElement();
-	e->setPoints(pts,3);
-
-	s->push(e);
-
 	g = new graphics(WIDTH, HEIGHT);
 
 	glutInit(&argc, argv);

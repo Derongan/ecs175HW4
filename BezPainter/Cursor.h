@@ -9,7 +9,7 @@ private:
 	AbstractTool *current_tool;
 	graphics *target;
 public:
-	void addPoint(int x, int y);
+	bool addPoint(int x, int y);
 	Element* finish();
 	void reset();
 	void useBezierTool();
