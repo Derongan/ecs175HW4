@@ -2,9 +2,14 @@
 
 
 
-bool Cursor::addPoint(int x, int y)
+bool Cursor::onMouseDown(int x, int y)
 {
-	return current_tool->addPoint(x, y);
+	return current_tool->onMouseDown(x, y);
+}
+
+void Cursor::onMouseUp(int x, int y)
+{
+	current_tool->onMouseUp(x, y);
 }
 
 Element* Cursor::finish()

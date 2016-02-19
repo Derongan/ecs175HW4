@@ -25,7 +25,7 @@ void BezierElement::setPoints(float * points, int num)
 	this->num = num;
 }
 
-void BezierElement::addPoint(int x, int y)
+void BezierElement::onMouseDown(int x, int y)
 {
 	if (num >= 20)
 		return;
@@ -62,4 +62,29 @@ bool BezierElement::inside(float x, float y)
 	}
 
 	return (x - 3 < maxX && x + 3 > minX && y - 3 < maxY && y + 3 > minY);
+}
+
+int BezierElement::getClickedControlPoint(float x, float y)
+{
+	for (int i = 0; i < num; i++) {
+		int x1 = points[i * 2];
+		int y1 = points[i * 2 + 1];
+
+		if (x - 3 < x1 && x + 3 > x1 && y - 3 < y1 && y + 3 > y1)
+			return i;
+	}
+	return -1;
+}
+
+void BezierElement::translate(float x, float y, int who)
+{
+	if(who == -1)
+		for (int i = 0; i < num; i++) {
+			points[i * 2] += x;
+			points[i * 2 + 1] += y;
+		}
+	else {
+		points[who * 2] += x;
+		points[who * 2 + 1] += y;
+	}
 }

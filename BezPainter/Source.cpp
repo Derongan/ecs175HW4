@@ -51,8 +51,10 @@ int main(int argc, char *argv[])
 							  //sets display function
 	glutDisplayFunc(display);
 	glutMouseFunc(click);
+	glutMotionFunc(move);
 	glutPassiveMotionFunc(move);
 	createMenu();
+
 
 	glutMainLoop();//main display loop, will display until terminate
 	return 0;
@@ -101,7 +103,11 @@ void callbackMenu(int id) {
 void click(int button, int state, int x, int y) {
 	y = HEIGHT - y;
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-		p->onClick(button, state, x, y);
+		p->onMouseDown(button, state, x, y);
+		glutPostRedisplay();
+	}
+	else if (button == GLUT_LEFT_BUTTON && state == GLUT_UP) {
+		p->onMouseUp(button, state, x, y);
 		glutPostRedisplay();
 	}
 }

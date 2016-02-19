@@ -11,7 +11,8 @@ private:
 	graphics *target;
 	DrawStack *stack;
 public:
-	bool addPoint(int x, int y);
+	bool onMouseDown(int x, int y);
+	void onMouseUp(int x, int y);
 	Element* finish();
 	void reset();
 	void useBezierTool();

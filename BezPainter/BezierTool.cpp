@@ -10,7 +10,7 @@ BezierTool::~BezierTool()
 {
 }
 
-bool BezierTool::addPoint(float x, float y)
+bool BezierTool::onMouseDown(float x, float y)
 {
 	this->points[this->pointNumber*2] = x;
 	this->points[this->pointNumber*2 + 1] = y;
@@ -37,7 +37,7 @@ Element * BezierTool::preview(int x, int y)
 {
 	BezierElement *e = new BezierElement();
 	e->setPoints(points, pointNumber);
-	e->addPoint(x, y);
+	e->onMouseDown(x, y);
 	e->setColor(color[0], color[1], color[2]);
 
 	return e;

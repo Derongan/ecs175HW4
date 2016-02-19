@@ -9,7 +9,7 @@ LineTool::~LineTool()
 {
 }
 
-bool LineTool::addPoint(float x, float y)
+bool LineTool::onMouseDown(float x, float y)
 {
 	this->points[this->pointNumber * 2] = x;
 	this->points[this->pointNumber * 2 + 1] = y;

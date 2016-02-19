@@ -23,3 +23,7 @@ Element * AbstractTool::preview(int x, int y)
 {
 	return nullptr;
 }
+
+void AbstractTool::onMouseUp(float x, float y)
+{
+}

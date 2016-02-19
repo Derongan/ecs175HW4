@@ -23,15 +23,20 @@ void Painter::draw()
 	mainStack->draw(g);
 }
 
-void Painter::onClick(int button, int state, int x, int y)
+void Painter::onMouseDown(int button, int state, int x, int y)
 {
-	if (!cursor->addPoint(x, y)) {
+	if (!cursor->onMouseDown(x, y)) {
 		Element *e = cursor->finish();
 		cursor->reset();
 
 		e->setColor(1, 0, 0);
 		mainStack->push(e);
 	}
+}
+
+void Painter::onMouseUp(int button, int state, int x, int y)
+{
+	cursor->onMouseUp(x, y);
 }
 
 void Painter::onMove(int x, int y)

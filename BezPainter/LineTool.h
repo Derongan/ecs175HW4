@@ -13,7 +13,7 @@ public:
 	LineTool();
 	~LineTool();
 
-	virtual bool addPoint(float x, float y);
+	virtual bool onMouseDown(float x, float y);
 	virtual Element* finish();
 	virtual void reset();
 	virtual Element* preview(int x, int y);

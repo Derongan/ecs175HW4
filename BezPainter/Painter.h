@@ -10,6 +10,7 @@ private:
 	graphics *g;
 	int x = 0;
 	int y = 0;
+
 public:
 	Painter(graphics *g);
 	~Painter();
@@ -17,7 +18,8 @@ public:
 	//Update functions
 	void draw();
 	//Click functions
-	void onClick(int button, int state, int x, int y);
+	void onMouseDown(int button, int state, int x, int y);
+	void onMouseUp(int button, int state, int x, int y);
 	void onMove(int x, int y);
 
 	//Getter
