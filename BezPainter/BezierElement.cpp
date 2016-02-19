@@ -4,9 +4,7 @@
 
 BezierElement::BezierElement()
 {
-	num = 10;
-	id = curid++;
-
+	num = 0;
 	points = new float[20];
 	show = new int[10];
 }

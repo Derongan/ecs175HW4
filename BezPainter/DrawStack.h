@@ -2,6 +2,7 @@
 #include "Element.h"
 #include "graphics.h"
 #include "BezierElement.h"
+#include "LineElement.h"
 #include <iostream>
 #include <fstream>
 #include <iostream>

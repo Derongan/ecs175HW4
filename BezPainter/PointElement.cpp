@@ -4,7 +4,6 @@
 
 PointElement::PointElement()
 {
-	id = curid++;
 
 	num = 1;
 	this->points = new float[2];
@@ -13,7 +12,6 @@ PointElement::PointElement()
 
 PointElement::PointElement(int x, int y)
 {
-	id = curid++;
 
 	num = 1;
 	this->points = new float[2];

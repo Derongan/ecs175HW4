@@ -8,7 +8,7 @@ enum TYPE {
 	LINE,
 };
 
-class Snap{
+class Snap {
 public:
 	Element* who;
 	bool front;
@@ -33,8 +33,7 @@ protected:
 	unsigned int num;
 
 public:
-	static int curid;
-	int id;
+	int id = -1;
 	Snap **snaps; //BAD MOVE BACK ASAP
 	int snapNum = 0;
 	float *points; //BAD MOVE BACK ASAP
@@ -60,6 +59,7 @@ public:
 	virtual int getNum();
 	virtual void addSnap(Element* e, bool front, int index);
 	virtual void addSnap(Snap* snap);
+	virtual void addPoint(float x, float y);
 	virtual void updateSnaps();
 };
 

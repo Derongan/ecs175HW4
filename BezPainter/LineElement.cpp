@@ -5,8 +5,6 @@
 LineElement::LineElement()
 {
 	num = 2;
-	id = curid++;
-
 	this->points = new float[4];
 	this->show = new int[2];
 }
@@ -14,7 +12,6 @@ LineElement::LineElement()
 LineElement::LineElement(int x0, int y0, int x1, int y1)
 {
 	num = 2;
-	id = curid++;
 
 	this->points = new float[4];
 	this->show = new int[2];
@@ -62,4 +59,9 @@ bool LineElement::inside(float x, float y)
 	}
 
 	return (x - 4 < maxX && x + 4 > minX && y - 4 < maxY && y + 4 > minY);
+}
+
+TYPE LineElement::getType()
+{
+	return BEZIER;
 }
