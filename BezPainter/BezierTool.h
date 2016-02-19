@@ -7,7 +7,7 @@ class BezierTool :
 private:
 	float points[20];
 	int pointNumber = 0;
-	const int MAXPOINTS = 4;
+	const int MAXPOINTS = 10;
 public:
 	BezierTool();
 	~BezierTool();

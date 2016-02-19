@@ -33,6 +33,11 @@ void Painter::draw()
 	mainStack->draw(g);
 }
 
+void Painter::addElement(Element * e)
+{
+	mainStack->push(e);
+}
+
 void Painter::onMouseDown(int button, int state, int x, int y)
 {
 	if (!cursor->onMouseDown(x, y)) {

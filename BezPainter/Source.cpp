@@ -73,6 +73,7 @@ void createMenu() {
 	glutAddMenuEntry("Blue", 2);
 
 	int menu = glutCreateMenu(callbackMenu);
+	glutAddMenuEntry("Finish Curve", 1);
 	glutAddMenuEntry("Point", 2);
 	glutAddMenuEntry("Line", 3);
 	glutAddMenuEntry("Curve", 4);
@@ -103,8 +104,8 @@ void callbackSub(int id) {
 void callbackMenu(int id) {
 	switch (id) {
 	case 1:
+		p->addElement(c->finish());
 		c->reset();
-
 		break;
 	case 3:
 		c->reset();
