@@ -22,7 +22,9 @@ bool LineTool::onMouseDown(float x, float y)
 
 Element* LineTool::finish()
 {
-	return new LineElement(points[0], points[1], points[2], points[3]);
+	Element* e = new LineElement(points[0], points[1], points[2], points[3]);
+	e->setControlPoint(-1, 0);
+	return e;
 }
 
 void LineTool::reset()

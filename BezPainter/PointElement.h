@@ -7,7 +7,6 @@ public:
 	PointElement();
 	PointElement(int x, int y);
 	~PointElement();
-	void draw(graphics *g);
-	void drawControlPoints(graphics *g);
+	void drawSelf(graphics *g);
 };
 

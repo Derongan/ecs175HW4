@@ -32,3 +32,8 @@ void AbstractTool::setStack(DrawStack * stack)
 {
 	this->stack = stack;
 }
+
+int AbstractTool::snap(Element * e, int index)
+{
+	return -1;
+}

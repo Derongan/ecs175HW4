@@ -9,7 +9,6 @@ public:
 	LineElement(int, int, int, int);
 	~LineElement();
 
-	virtual void draw(graphics *g);
-	virtual void drawControlPoints(graphics *g);
+	virtual void drawSelf(graphics *g);
 };
 

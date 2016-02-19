@@ -8,8 +8,14 @@ class Cursor
 {
 private:
 	AbstractTool *current_tool;
-	graphics *target;
 	DrawStack *stack;
+	int snapX;
+	int snapY;
+	bool snap = false;
+	int snapID;
+	Element* partner;
+	Snap* frontSnap;
+	Snap* tailSnap;
 public:
 	bool onMouseDown(int x, int y);
 	void onMouseUp(int x, int y);

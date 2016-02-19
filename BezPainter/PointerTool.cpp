@@ -20,6 +20,7 @@ bool PointerTool::onMouseDown(float x, float y)
 		if (i != -1) {
 			movingPt = true;
 			pind = i;
+			this->e->setControlPoint(i, 2);
 			return true;
 		}
 		if (this->e->inside(x, y)) {
@@ -33,6 +34,7 @@ bool PointerTool::onMouseDown(float x, float y)
 				replaceElement();
 				stack->set(i, nullptr);
 				this->e = e;
+				e->setControlPoint(-1, 1);
 				this->e->setColor(0, 1, 0);
 				this->index = i;
 				return true;
@@ -45,6 +47,8 @@ bool PointerTool::onMouseDown(float x, float y)
 
 void PointerTool::onMouseUp(float x, float y)
 {
+	if(this->e != nullptr)
+		this->e->setControlPoint(-1, 1);
 	down = false;
 	movingPt = false;
 }
@@ -86,6 +90,7 @@ void PointerTool::replaceElement()
 	if (index != -1 && e != nullptr) {
 		stack->set(index, e);
 		e->setColor(1, 0, 0);
+		e->setControlPoint(-1, 0);
 		index = -1;
 		e = nullptr;
 	}

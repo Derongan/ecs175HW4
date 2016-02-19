@@ -6,6 +6,7 @@ class AbstractTool
 protected:
 	float color[3];
 	DrawStack* stack;
+
 public:
 	AbstractTool();
 	virtual ~AbstractTool();
@@ -17,5 +18,6 @@ public:
 	virtual Element* preview(int x, int y);
 	virtual void onMouseUp(float x, float y);
 	void setStack(DrawStack* stack);
+	virtual int snap(Element* e, int index);
 };
 

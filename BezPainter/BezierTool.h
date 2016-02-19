@@ -7,7 +7,7 @@ class BezierTool :
 private:
 	float points[20];
 	int pointNumber = 0;
-	const int MAXPOINTS = 3;
+	const int MAXPOINTS = 4;
 public:
 	BezierTool();
 	~BezierTool();
@@ -15,5 +15,6 @@ public:
 	virtual Element* finish();
 	virtual void reset();
 	virtual Element* preview(int x, int y);
+	virtual int snap(Element *e, int index);
 };
 

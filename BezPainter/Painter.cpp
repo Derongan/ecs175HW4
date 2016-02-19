@@ -19,7 +19,7 @@ Painter::~Painter()
 
 void Painter::draw()
 {
-	tempStack->draw(g, true);
+	tempStack->draw(g);
 	mainStack->draw(g);
 }
 
