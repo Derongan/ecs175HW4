@@ -13,6 +13,7 @@ void click(int,int,int,int);
 void move(int, int);
 void createMenu();
 void callbackMenu(int id);
+void callbackSub(int id);
 
 const int WIDTH = 800;
 const int HEIGHT = 600;
@@ -66,23 +67,44 @@ void move(int x, int y) {
 }
 
 void createMenu() {
-	glutCreateMenu(callbackMenu);
-	glutAddMenuEntry("Start", 0);
-	glutAddMenuEntry("Finish", 1);
-	glutAddMenuEntry("------", -1);
+	int submenu = glutCreateMenu(callbackSub);
+	glutAddMenuEntry("Red", 0);
+	glutAddMenuEntry("Green", 1);
+	glutAddMenuEntry("Blue", 2);
+
+	int menu = glutCreateMenu(callbackMenu);
 	glutAddMenuEntry("Point", 2);
 	glutAddMenuEntry("Line", 3);
 	glutAddMenuEntry("Curve", 4);
-	glutAddMenuEntry("------", -1);
 	glutAddMenuEntry("Select", 5);
+	glutAddMenuEntry("-----", -1);
+	glutAddMenuEntry("Save", 10);
+	glutAddMenuEntry("Load", 11);
+	glutAddSubMenu("Color", submenu);
+
+
 	glutAttachMenu(GLUT_RIGHT_BUTTON);
+}
+
+void callbackSub(int id) {
+	switch (id) {
+	case 0:
+		c->setColor(1, 0, 0);
+		break;
+	case 1:
+		c->setColor(0, 1, 0);
+		break;
+	case 2:
+		c->setColor(0, 0, 1);
+		break;
+	}
 }
 
 void callbackMenu(int id) {
 	switch (id) {
 	case 1:
-		c->setColor(1, 0, 0);
 		c->reset();
+
 		break;
 	case 3:
 		c->reset();
@@ -95,6 +117,9 @@ void callbackMenu(int id) {
 	case 5:
 		c->reset();
 		c->usePointerTool();
+		break;
+	case 10:
+		p->save();
 		break;
 	}
 	glutPostRedisplay();

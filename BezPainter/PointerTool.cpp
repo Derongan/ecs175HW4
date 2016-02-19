@@ -35,7 +35,6 @@ bool PointerTool::onMouseDown(float x, float y)
 				stack->set(i, nullptr);
 				this->e = e;
 				e->setControlPoint(-1, 1);
-				this->e->setColor(0, 1, 0);
 				this->index = i;
 				return true;
 			}
@@ -89,7 +88,6 @@ void PointerTool::replaceElement()
 {
 	if (index != -1 && e != nullptr) {
 		stack->set(index, e);
-		e->setColor(1, 0, 0);
 		e->setControlPoint(-1, 0);
 		index = -1;
 		e = nullptr;

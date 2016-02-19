@@ -106,6 +106,16 @@ void Element::setControlPoint(int index, int style)
 
 void Element::translate(float x, float y, int who)
 {
+	if (who == -1)
+		for (int i = 0; i < num; i++) {
+			points[i * 2] += x;
+			points[i * 2 + 1] += y;
+		}
+	else {
+		points[who * 2] += x;
+		points[who * 2 + 1] += y;
+	}
+	updateSnaps();
 }
 
 TYPE Element::getType()

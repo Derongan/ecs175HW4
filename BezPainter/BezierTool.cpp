@@ -91,5 +91,10 @@ int BezierTool::snap(Element * e, int index)
 			return 2;
 		}
 	}
+	else {
+		if (pointNumber == 0) {
+			return 2;
+		}
+	}
 	return -1;
 }

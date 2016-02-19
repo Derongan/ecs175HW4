@@ -10,5 +10,7 @@ public:
 	~LineElement();
 
 	virtual void drawSelf(graphics *g);
+	virtual int getClickedControlPoint(float x, float y);
+	virtual bool inside(float x, float y);
 };
 

@@ -42,6 +42,7 @@ void Cursor::reset()
 {
 	frontSnap = nullptr;
 	tailSnap = nullptr;
+	partner = nullptr;
 	current_tool->reset();
 }
 

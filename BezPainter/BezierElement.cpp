@@ -66,19 +66,6 @@ int BezierElement::getClickedControlPoint(float x, float y)
 	return -1;
 }
 
-void BezierElement::translate(float x, float y, int who)
-{
-	if(who == -1)
-		for (int i = 0; i < num; i++) {
-			points[i * 2] += x;
-			points[i * 2 + 1] += y;
-		}
-	else {
-		points[who * 2] += x;
-		points[who * 2 + 1] += y;
-	}
-	updateSnaps();
-}
 
 void BezierElement::snap(Element * e, int index)
 {
@@ -98,8 +85,8 @@ void BezierElement::updateSnaps()
 	for (int i = 0; i < snapNum; i++) {
 		snap = snaps[i];
 		e = snap->who;
-		if (e->snappable) {
-			index = snap->index;
+		index = snap->index;
+		if (e->snappable && e->getType() == BEZIER) {
 			if (snap->front) {
 				e->points[index * 2] = points[0];
 				e->points[index * 2 + 1] = points[1];
@@ -134,7 +121,17 @@ void BezierElement::updateSnaps()
 
 			e->updateSnaps();
 		}
-
+		else if (e->snappable) {
+			if (snap->front) {
+				e->points[index * 2] = points[0];
+				e->points[index * 2 + 1] = points[1];
+			}
+			else {
+				e->points[index * 2] = points[6];
+				e->points[index * 2 + 1] = points[7];
+			}
+			e->updateSnaps();
+		}
 	}
 	snappable = true;
 }

@@ -17,6 +17,14 @@ Painter::~Painter()
 {
 }
 
+void Painter::save()
+{
+	std::ofstream f;
+	f.open("saved_data");
+	f.write("Yo");
+	f.close();
+}
+
 void Painter::draw()
 {
 	tempStack->draw(g);
@@ -29,7 +37,6 @@ void Painter::onMouseDown(int button, int state, int x, int y)
 		Element *e = cursor->finish();
 		cursor->reset();
 
-		e->setColor(1, 0, 0);
 		mainStack->push(e);
 	}
 }
