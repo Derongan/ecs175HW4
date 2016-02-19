@@ -21,6 +21,7 @@ public:
 	void load();
 	//Update functions
 	void draw();
+	void clear();
 	void addElement(Element* e);
 	//Click functions
 	void onMouseDown(int button, int state, int x, int y);

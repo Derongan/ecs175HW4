@@ -33,6 +33,12 @@ void Painter::draw()
 	mainStack->draw(g);
 }
 
+void Painter::clear()
+{
+	mainStack->hardReset();
+	tempStack->hardReset();
+}
+
 void Painter::addElement(Element * e)
 {
 	mainStack->push(e);

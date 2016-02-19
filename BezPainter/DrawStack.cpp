@@ -52,6 +52,14 @@ void DrawStack::reset()
 	stackLocation = 0;
 }
 
+void DrawStack::hardReset()
+{
+	for (int i = 0; i < stackLocation; i++) {
+		//delete _stack[i];
+	}
+	stackLocation = 0;
+}
+
 Element* DrawStack::get(int i)
 {
 	if (i > stackLocation)
@@ -64,6 +72,8 @@ void DrawStack::set(int i, Element * e)
 	if (i > stackLocation)
 		return;
 	_stack[i] = e;
+	if(e != nullptr)
+		e->id = i;
 }
 
 void DrawStack::save()
@@ -162,6 +172,7 @@ void DrawStack::load()
 			break;
 		}
 		e->setColor(r, g, b);
+		e->id = ln;
 		_stack[ln] = e;
 		ln++;
 	}

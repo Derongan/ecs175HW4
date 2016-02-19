@@ -23,6 +23,7 @@ public:
 	bool push(Element *e);
 	bool pop();
 	void reset();
+	void hardReset();
 
 	Element* get(int i);
 	void set(int i, Element *e);

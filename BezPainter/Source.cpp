@@ -81,6 +81,7 @@ void createMenu() {
 	glutAddMenuEntry("-----", -1);
 	glutAddMenuEntry("Save", 10);
 	glutAddMenuEntry("Load", 11);
+	glutAddMenuEntry("Reset", 12);
 	glutAddSubMenu("Color", submenu);
 
 
@@ -120,10 +121,19 @@ void callbackMenu(int id) {
 		c->usePointerTool();
 		break;
 	case 10:
+		c->reset();
+		c->usePointerTool();
 		p->save();
 		break;
-	case 11:
+	case 11:		
+		c->reset();
+		c->usePointerTool();
 		p->load();
+		break;
+	case 12:
+		p->clear();
+		c->reset();
+		c->usePointerTool();
 		break;
 	}
 	glutPostRedisplay();
