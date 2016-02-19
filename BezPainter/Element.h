@@ -27,16 +27,19 @@ public:
 class Element
 {
 protected:
-	float color[3];
 	int *show;	//Control points to show
-	Snap **snaps;
 
-	int snapNum = 0;
 
 	unsigned int num;
 
 public:
+	static int curid;
+	int id;
+	Snap **snaps; //BAD MOVE BACK ASAP
+	int snapNum = 0;
 	float *points; //BAD MOVE BACK ASAP
+	float color[3];
+
 	bool snappable = true;
 
 	Element();

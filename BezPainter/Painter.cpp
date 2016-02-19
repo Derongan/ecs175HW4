@@ -19,10 +19,12 @@ Painter::~Painter()
 
 void Painter::save()
 {
-	std::ofstream f;
-	f.open("saved_data");
-	f.write("Yo");
-	f.close();
+	mainStack->save();
+}
+
+void Painter::load()
+{
+	mainStack->load();
 }
 
 void Painter::draw()

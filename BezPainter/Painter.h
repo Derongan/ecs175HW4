@@ -1,8 +1,7 @@
 #pragma once
 #include "Cursor.h"
 #include "DrawStack.h"
-#include <fstream>
-#include <iostream>
+
 class Painter
 {
 private:
@@ -19,6 +18,7 @@ public:
 
 	//File functions
 	void save();
+	void load();
 	//Update functions
 	void draw();
 	//Click functions

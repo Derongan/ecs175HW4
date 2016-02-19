@@ -5,6 +5,8 @@
 BezierElement::BezierElement()
 {
 	num = 10;
+	id = curid++;
+
 	points = new float[20];
 	show = new int[10];
 }
@@ -99,23 +101,23 @@ void BezierElement::updateSnaps()
 					e->points[3] = points[1] + dy;
 				}
 				else {
-					e->points[4] = points[0] + dx;
-					e->points[5] = points[1] + dy;;
+					e->points[(e->getNum() - 2) * 2] = points[0] + dx;
+					e->points[(e->getNum() - 2) * 2 + 1] = points[1] + dy;;
 				}
 			}
 			else {
-				int dx = points[6] - points[4];
-				int dy = points[7] - points[5];
+				int dx =  getPointX(num-1) - getPointX(num-2);
+				int dy = getPointY(num - 1) - getPointY(num - 2);
 
-				e->points[index * 2] = points[6];
-				e->points[index * 2 + 1] = points[7];
+				e->points[index * 2] = getPointX(num - 1);
+				e->points[index * 2 + 1] = getPointY(num - 1);
 				if (index == 0) {
-					e->points[2] = points[6] + dx;
-					e->points[3] = points[7] + dy;
+					e->points[2] = getPointX(num - 1) + dx;
+					e->points[3] = getPointY(num - 1) + dy;
 				}
 				else {
-					e->points[4] = points[6] + dx;
-					e->points[5] = points[7] + dy;
+					e->points[(e->getNum() - 2) * 2] = getPointX(num - 1) + dx;
+					e->points[(e->getNum() - 2) * 2 + 1] = getPointY(num - 1) + dy;
 				}
 			}
 

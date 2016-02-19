@@ -121,6 +121,9 @@ void callbackMenu(int id) {
 	case 10:
 		p->save();
 		break;
+	case 11:
+		p->load();
+		break;
 	}
 	glutPostRedisplay();
 }

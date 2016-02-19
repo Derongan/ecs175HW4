@@ -71,10 +71,11 @@ int BezierTool::snap(Element * e, int index)
 		}
 	}
 
-	else if (pointNumber == MAXPOINTS-1 && e->getType() == BEZIER) {
+	else if (pointNumber >= 2 && e->getType() == BEZIER) {
 		int num = e->getNum();
 
 		if (index == 0 || index == num - 1) {
+
 			if (index == 0) {
 				int dx = e->getPointX(0) - e->getPointX(1);
 				int dy = e->getPointY(0) - e->getPointY(1);
@@ -88,12 +89,16 @@ int BezierTool::snap(Element * e, int index)
 				this->points[this->pointNumber * 2 + 1 - 2] = e->getPointY(index) + dy;
 
 			}
+			pointNumber++;
+			this->points[this->pointNumber * 2] = e->getPointX(index);
+			this->points[this->pointNumber * 2 + 1] = e->getPointY(index);
+			pointNumber++;
 			return 2;
 		}
 	}
 	else {
 		if (pointNumber == 0) {
-			return 2;
+			return 1;
 		}
 	}
 	return -1;

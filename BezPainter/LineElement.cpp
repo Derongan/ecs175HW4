@@ -5,6 +5,8 @@
 LineElement::LineElement()
 {
 	num = 2;
+	id = curid++;
+
 	this->points = new float[4];
 	this->show = new int[2];
 }
@@ -12,6 +14,8 @@ LineElement::LineElement()
 LineElement::LineElement(int x0, int y0, int x1, int y1)
 {
 	num = 2;
+	id = curid++;
+
 	this->points = new float[4];
 	this->show = new int[2];
 

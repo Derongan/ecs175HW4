@@ -14,6 +14,7 @@ bool Cursor::onMouseDown(int x, int y)
 		}
 		else if (res == 2) {
 			tailSnap = new Snap(partner, false, snapID);
+			return false;
 		}
 	}
 	return current_tool->onMouseDown(x, y);
@@ -35,6 +36,7 @@ Element* Cursor::finish()
 		e->addSnap(tailSnap);
 		tailSnap->who->addSnap(new Snap(e, tailSnap->index == 0, e->getNum()-1));
 	}
+	e->updateSnaps();
 	return e;
 }
 

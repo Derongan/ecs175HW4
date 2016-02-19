@@ -4,6 +4,8 @@
 
 PointElement::PointElement()
 {
+	id = curid++;
+
 	num = 1;
 	this->points = new float[2];
 	this->show = new int[1];
@@ -11,6 +13,8 @@ PointElement::PointElement()
 
 PointElement::PointElement(int x, int y)
 {
+	id = curid++;
+
 	num = 1;
 	this->points = new float[2];
 	this->show = new int[1];

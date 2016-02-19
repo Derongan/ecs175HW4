@@ -1,9 +1,10 @@
 #include "Element.h"
 
-
+int Element::curid = 0;
 
 Element::Element()
 {
+	id = curid++;
 	snaps = new Snap*[20];
 	setColor(0, 0, 1);
 }

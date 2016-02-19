@@ -2,6 +2,11 @@
 #include "Element.h"
 #include "graphics.h"
 #include "BezierElement.h"
+#include <iostream>
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <sstream>
 
 class DrawStack
 {
@@ -20,4 +25,7 @@ public:
 
 	Element* get(int i);
 	void set(int i, Element *e);
+
+	void save();
+	void load();
 };
