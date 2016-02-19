@@ -6,7 +6,7 @@ Painter::Painter(graphics *g)
 {
 	mainStack = new DrawStack();
 	tempStack = new DrawStack();
-	cursor = new Cursor();
+	cursor = new Cursor(mainStack);
 	this->g = g;
 
 	cursor->usePointerTool();
@@ -42,6 +42,9 @@ void Painter::onMove(int x, int y)
 	if (e != nullptr) {
 		tempStack->pop();
 		tempStack->push(e);
+	}
+	else {
+		tempStack->reset();
 	}
 }
 

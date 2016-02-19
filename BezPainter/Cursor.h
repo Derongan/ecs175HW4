@@ -9,6 +9,7 @@ class Cursor
 private:
 	AbstractTool *current_tool;
 	graphics *target;
+	DrawStack *stack;
 public:
 	bool addPoint(int x, int y);
 	Element* finish();
@@ -20,7 +21,7 @@ public:
 
 	Element* preview(int x, int y);
 
-	Cursor();
+	Cursor(DrawStack* stack);
 	~Cursor();
 };
 

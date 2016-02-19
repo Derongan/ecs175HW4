@@ -12,5 +12,6 @@ public:
 	void setPoints(float* points, int num);
 	virtual void addPoint(int x, int y);
 	virtual void drawControlPoints(graphics *g);
+	virtual bool inside(float x, float y);
 };
 

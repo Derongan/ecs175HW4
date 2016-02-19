@@ -33,3 +33,8 @@ void Element::addPoint(int x, int y)
 void Element::drawControlPoints(graphics *g)
 {
 }
+
+bool Element::inside(float x, float y)
+{
+	return false;
+}

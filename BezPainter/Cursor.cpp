@@ -32,7 +32,9 @@ void Cursor::useLineTool()
 void Cursor::usePointerTool()
 {
 	delete current_tool;
-	this->current_tool = new PointerTool();
+	PointerTool *e = new PointerTool();
+	e->setStack(stack);
+	current_tool = e;
 }
 
 void Cursor::setColor(int r, int g, int b)
@@ -42,11 +44,14 @@ void Cursor::setColor(int r, int g, int b)
 
 Element * Cursor::preview(int x, int y)
 {
-	return current_tool->preview(x,y);
+	if(current_tool != nullptr)
+		return current_tool->preview(x,y);
+	return nullptr;
 }
 
-Cursor::Cursor()
+Cursor::Cursor(DrawStack *stack)
 {
+	this->stack = stack;
 }
 
 

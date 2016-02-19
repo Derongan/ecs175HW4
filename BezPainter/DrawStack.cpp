@@ -17,9 +17,11 @@ DrawStack::~DrawStack()
 void DrawStack::draw(graphics *g, bool w)
 {
 	for (int i = 0; i < stackLocation; i++) {
-		_stack[i]->draw(g);
-		if (w)
-			_stack[i]->drawControlPoints(g);
+		if (_stack[i] != nullptr) {
+			_stack[i]->draw(g);
+			if (w)
+				_stack[i]->drawControlPoints(g);
+		}
 	}
 }
 
@@ -47,4 +49,18 @@ bool DrawStack::pop()
 void DrawStack::reset()
 {
 	stackLocation = 0;
+}
+
+Element* DrawStack::get(int i)
+{
+	if (i > stackLocation)
+		return nullptr;
+	return _stack[i];
+}
+
+void DrawStack::set(int i, Element * e)
+{
+	if (i > stackLocation)
+		return;
+	_stack[i] = e;
 }

@@ -72,7 +72,7 @@ void createMenu() {
 	glutAddMenuEntry("Line", 3);
 	glutAddMenuEntry("Curve", 4);
 	glutAddMenuEntry("------", -1);
-	glutAddMenuEntry("continueCurve", 5);
+	glutAddMenuEntry("Select", 5);
 	glutAttachMenu(GLUT_RIGHT_BUTTON);
 }
 
@@ -92,6 +92,7 @@ void callbackMenu(int id) {
 		break;
 	case 5:
 		c->reset();
+		c->usePointerTool();
 		break;
 	}
 	glutPostRedisplay();
@@ -101,6 +102,7 @@ void click(int button, int state, int x, int y) {
 	y = HEIGHT - y;
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
 		p->onClick(button, state, x, y);
+		glutPostRedisplay();
 	}
 }
 

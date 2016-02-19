@@ -47,3 +47,19 @@ void BezierElement::drawControlPoints(graphics *g)
 		}
 	}
 }
+
+bool BezierElement::inside(float x, float y)
+{
+	float maxX, maxY, minX, minY;
+	maxX = minX = points[0];
+	minY = maxY = points[1];
+
+	for (int i = 1; i < num; i++) {
+		maxX = fmax(maxX, points[2 * i]);
+		maxY = fmax(maxY, points[2 * i + 1]);
+		minX = fmin(minX, points[2 * i]);
+		minY = fmin(minY, points[2 * i + 1]);
+	}
+
+	return (x - 3 < maxX && x + 3 > minX && y - 3 < maxY && y + 3 > minY);
+}

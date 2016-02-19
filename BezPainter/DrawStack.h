@@ -8,8 +8,9 @@ class DrawStack
 private:
 	Element** _stack;
 	unsigned int stackSize;
-	unsigned int stackLocation;
 public:
+	unsigned int stackLocation;
+
 	DrawStack();
 	~DrawStack();
 	void draw(graphics *g);
@@ -17,4 +18,7 @@ public:
 	bool push(Element *e);
 	bool pop();
 	void reset();
+
+	Element* get(int i);
+	void set(int i, Element *e);
 };
