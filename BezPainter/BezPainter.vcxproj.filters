@@ -13,90 +13,108 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Elements">
+      <UniqueIdentifier>{3c5b66e5-1257-4ee7-ae88-d641bbe1ff75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tools">
+      <UniqueIdentifier>{9bc13580-e3bd-4544-a29d-c1f3ac270784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Elements">
+      <UniqueIdentifier>{45e665be-8c22-410a-80b8-83bc227c7ac6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tools">
+      <UniqueIdentifier>{e2c3a3a3-cbe7-43e3-ad43-8d91e00ce048}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics">
+      <UniqueIdentifier>{f61eb98a-20fe-4c6a-8de5-e3764390c548}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics">
+      <UniqueIdentifier>{e54e17fd-491b-49b7-8de1-f39657bd05a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AbstractTool.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BezierTool.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Cursor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LineTool.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="graphics.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="list.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="BezierElement.cpp">
+      <Filter>Source Files\Elements</Filter>
     </ClCompile>
     <ClCompile Include="Element.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BezierElement.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DrawStack.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PointElement.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Elements</Filter>
     </ClCompile>
     <ClCompile Include="LineElement.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Elements</Filter>
     </ClCompile>
-    <ClCompile Include="Painter.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="PointElement.cpp">
+      <Filter>Source Files\Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractTool.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="BezierTool.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="LineTool.cpp">
+      <Filter>Source Files\Tools</Filter>
     </ClCompile>
     <ClCompile Include="PointerTool.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="list.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Painter.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawStack.cpp">
+      <Filter>Source Files\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AbstractTool.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BezierTool.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Cursor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LineTool.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="graphics.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="list.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Element.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Elements</Filter>
     </ClInclude>
     <ClInclude Include="BezierElement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DrawStack.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PointElement.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Elements</Filter>
     </ClInclude>
     <ClInclude Include="LineElement.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Elements</Filter>
     </ClInclude>
-    <ClInclude Include="Painter.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="PointElement.h">
+      <Filter>Header Files\Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractTool.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="BezierTool.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="LineTool.h">
+      <Filter>Header Files\Tools</Filter>
     </ClInclude>
     <ClInclude Include="PointerTool.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawStack.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="list.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Painter.h">
+      <Filter>Header Files\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

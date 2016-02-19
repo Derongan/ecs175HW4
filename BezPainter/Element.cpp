@@ -10,6 +10,7 @@ Element::Element()
 
 Element::~Element()
 {
+	delete[] points;
 }
 
 void Element::draw(graphics * g, bool w)
@@ -27,6 +28,10 @@ void Element::setColor(float r, float g, float b)
 }
 
 void Element::onMouseDown(int x, int y)
+{
+}
+
+void Element::onMouseOver(int x, int y)
 {
 }
 

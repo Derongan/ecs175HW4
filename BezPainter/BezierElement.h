@@ -3,7 +3,6 @@
 class BezierElement :
 	public Element
 {
-	float points[20];
 	unsigned int num;
 public:
 	BezierElement();
@@ -15,5 +14,6 @@ public:
 	virtual bool inside(float x, float y);
 	virtual int getClickedControlPoint(float x, float y);
 	virtual void translate(float x, float y, int who);
+	virtual void onMouseOver(float x, float y);
 };
 

@@ -4,10 +4,12 @@
 
 LineElement::LineElement()
 {
+	this->points = new float[4];
 }
 
 LineElement::LineElement(int x0, int y0, int x1, int y1)
 {
+	this->points = new float[4];
 	points[0] = x0;
 	points[1] = y0;
 	points[2] = x1;

@@ -4,7 +4,6 @@ class LineElement :
 	public Element
 {
 private:
-	float points[4];
 public:
 	LineElement();
 	LineElement(int, int, int, int);

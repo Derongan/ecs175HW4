@@ -3,9 +3,6 @@
 class PointElement :
 	public Element
 {
-private:
-	int x;
-	int y;
 public:
 	PointElement();
 	PointElement(int x, int y);

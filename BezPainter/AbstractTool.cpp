@@ -27,3 +27,8 @@ Element * AbstractTool::preview(int x, int y)
 void AbstractTool::onMouseUp(float x, float y)
 {
 }
+
+void AbstractTool::setStack(DrawStack * stack)
+{
+	this->stack = stack;
+}

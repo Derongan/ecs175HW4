@@ -4,6 +4,7 @@
 
 BezierElement::BezierElement()
 {
+	points = new float[20];
 }
 
 
@@ -87,4 +88,8 @@ void BezierElement::translate(float x, float y, int who)
 		points[who * 2] += x;
 		points[who * 2 + 1] += y;
 	}
+}
+
+void BezierElement::onMouseOver(float x, float y)
+{
 }

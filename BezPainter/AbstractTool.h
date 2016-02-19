@@ -1,9 +1,11 @@
 #pragma once
 #include "Element.h";
+#include "DrawStack.h"
 class AbstractTool
 {
 protected:
 	float color[3];
+	DrawStack* stack;
 public:
 	AbstractTool();
 	virtual ~AbstractTool();
@@ -14,5 +16,6 @@ public:
 	virtual void setColor(float r, float g, float b);
 	virtual Element* preview(int x, int y);
 	virtual void onMouseUp(float x, float y);
+	void setStack(DrawStack* stack);
 };
 
